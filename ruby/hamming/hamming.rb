@@ -1,12 +1,7 @@
 class Hamming 
   def self.compute(let1, let2)
-    sum = 0
-    all_letters = let1.chars.zip(let2.chars)
-    all_letters.each do |pair|
-      if pair[0] != pair[1]
-        sum += 1
-      end
-    end
-    sum
+    let1.chars.zip(let2.chars)
+    .select { |char1, char2| char1 != char2 }
+    .length 
   end
 end
