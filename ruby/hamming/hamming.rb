@@ -1,7 +1,9 @@
+require 'pry'
+
 class Hamming 
   def self.compute(let1, let2)
-    let1.chars.zip(let2.chars)
-    .select { |char1, char2| char1 != char2 }
-    .length 
+    let1.chars.zip(let2.chars).inject(0) do |sum, element|
+      element[0] != element[1] ? sum + 1 : sum + 0
+    end
   end
 end
